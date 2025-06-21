@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inlighn Tech - Transform Your Career</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+</head>
+<body>
+
+    <div id="page-loader">
+        <div class="loader-logo">INLIGHN</div>
+    </div>
+
+
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
+
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">INLIGHN TECH</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#verify">Verify Certificate</a></li>
+                <a href="#" class="cta-button" onclick="openLogin()">Login to Portal</a>
+
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        
+        <!-- 3D Three.js Scene -->
+        <div class="hero-3d-container">
+            <canvas id="hero-3d-canvas"></canvas>
+        </div>
+        
+        <div class="floating-elements">
+            <div class="floating-cube"></div>
+            <div class="floating-cube"></div>
+            <div class="floating-cube"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Transform Your Career</h1>
+            <p class="hero-subtitle">Gain real-world experience with our immersive internship programs in Cybersecurity, Full Stack Development, Data Science, and Data Analysis. Learn today, lead tomorrow.</p>
+            <a href="#programs" class="cta-button">Explore Programs</a>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs" id="programs">
+        <div class="container">
+            <h2 class="section-title">Our Programs</h2>
+            <div class="programs-grid">
+                <div class="program-card" onclick="openModal(0)">
+                    <div class="program-icon">🛡️</div>
+                    <h3 class="program-title">Cybersecurity</h3>
+                    <p class="program-description">Master the art of digital defense with hands-on experience in threat detection, vulnerability assessment, and security architecture.</p>
+                </div>
+                <div class="program-card" onclick="openModal(1)">
+                    <div class="program-icon">💻</div>
+                    <h3 class="program-title">Full Stack Development</h3>
+                    <p class="program-description">Build complete web applications from frontend to backend using modern technologies like React, Node.js, and cloud platforms.</p>
+                </div>
+                <div class="program-card" onclick="openModal(2)">
+                    <div class="program-icon">📊</div>
+                    <h3 class="program-title">Data Science</h3>
+                    <p class="program-description">Unlock insights from data using machine learning, statistical analysis, and advanced visualization techniques.</p>
+                </div>
+                <div class="program-card" onclick="openModal(3)">
+                    <div class="program-icon">📈</div>
+                    <h3 class="program-title">Data Analysis</h3>
+                    <p class="program-description">Transform raw data into actionable business intelligence using SQL, Python, Power BI, and Tableau.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Who We Are</h2>
+                    <p>At INLIGHN TECH, we believe that the future of education lies in bridging the gap between academic learning and industry needs. Founded with a passion for providing meaningful and immersive learning experiences, we offer internship programs that equip students and young professionals with practical skills.</p>
+                    <p>Our expert mentors guide you through real-world projects, ensuring you gain hands-on experience that makes you industry-ready from day one.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Interns Enrolled</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Expert Instructors</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="program">Interested Program</label>
+                            <input type="text" id="program" name="program" placeholder="e.g., Cybersecurity, Data Science">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your goals and interests..."></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </form>
+                    <div class="contact-grid">
+                    <div class="contact-card">
+                        <img src="/images/email.png" alt="Email Icon">
+                        <h3>Email Address</h3>
+                        <p>info@inlighntech.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <img src="/images/callus.png" alt="Call Icon">
+                        <h3>Call Us</h3>
+                        <p>+91-9368842663</p>
+                    </div>
+                    <div class="contact-card">
+                        <img src="/images/location3.png" alt="Visit Icon">
+                        <h3>Visit Our Office</h3>
+                        <p>Office No: VO-301, WeWork Prestige Ground Floor, 36, Infantry Rd, Tasker Town, Shivaji Nagar, Bangalore 560001</p>
+                    </div>
+                    <div class="contact-card">
+                        <img src="/images/location2.png" alt="Registered Icon">
+                        <h3>Registered Office</h3>
+                        <p>Opposite Swasti Hospital, Anupam Nagar, Badaun Road, Bareilly, UP 243001</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Verify Certificate Section -->
+<section class="verify" id="verify">
+  <div class="container">
+    <h2 class="section-title">Verify Certificate</h2>
+    <h4>(Use 1234 Or ABCD as valid )</h4>
+    <div class="verify-form">
+      <lottie-player id="verifyAnimation" src="https://assets6.lottiefiles.com/packages/lf20_4kx2q32n.json"  background="transparent" speed="1" style="width: 250px; height: 250px; margin: auto;" loop autoplay></lottie-player>
+      <input type="text" id="certificateInput" placeholder="Enter Certificate ID" />
+      <button class="cta-button" onclick="verifyCertificate()">Verify</button>
+      <p id="verifyMessage" class="verify-message"></p>
+    </div>
+  </div>
+</section>
+
+
+
+
+            <!-- FAQ'S -->
+        <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">What programs do you offer?</div>
+            <div class="faq-answer">We offer immersive internship programs in Cybersecurity, Full Stack Development, Data Science, and Data Analysis.</div>
+            </div>
+
+            <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Are the internships paid or unpaid?</div>
+            <div class="faq-answer">Currently, our internships are unpaid but offer certificate-based recognition and real-world experience.</div>
+            </div>
+
+            <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">Will I get a certificate?</div>
+            <div class="faq-answer">Yes, you’ll receive a verified digital certificate that can be validated through our website.</div>
+            </div>
+
+            <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">How can I enroll?</div>
+            <div class="faq-answer">Scroll to the contact section and send your details or use the login portal to get started.</div>
+            </div>
+        </div>
+        </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 INLIGHN TECH. All rights reserved.</p>
+            <p>Empowering the next generation of tech professionals.</p>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn">📧</a>
+                <a href="#" aria-label="Twitter">🐦</a>
+                <a href="#" aria-label="Instagram">📷</a>
+                <a href="#" aria-label="YouTube">📹</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Program Detail Modal -->
+<div id="programModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle">Program Title</h2>
+        <p id="modalDescription">Learning outcomes and overview here.</p>
+        <ul id="modalDetails">
+        <!-- Populated dynamically -->
+        </ul>
+        <a href="#contact" class="cta-button" onclick="enrollNow()">Enroll Now</a>
+    </div>
+</div>
+
+<div id="loginModal" class="login-modal">
+  <div class="login-content">
+    <span class="login-close" onclick="closeLogin()">&times;</span>
+    <h2>Login to Inlighn Portal</h2>
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Email" required />
+      <input type="password" id="loginPassword" placeholder="Password" required />
+      <button type="submit" class="cta-button">Login</button>
+      <br>
+      <h4>dummy id: frontend@gmail.com pass:123456</h4>
+    </form>
+    <p id="loginMessage" style="margin-top: 1rem;"></p>
+  </div>
+</div>
+
+
+    <!-- Load Lottie & Confetti libraries -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- AI Chatbot Widget -->
+<div id="chatbot-toggle">
+  <img src="/images/chatbot.png" alt="Chatbot Icon" />
+</div>
+
+<div id="chatbot-box">
+  <div class="chat-header">AI HelpBot <span id="chat-close">×</span></div>
+  <div class="chat-messages" id="chat-messages">
+    <div class="bot-message">Hi! I'm here to help. Ask me anything 👋</div>
+  </div>
+  <form id="chat-form">
+    <input type="text" id="chat-input" placeholder="Type your question..." autocomplete="off" />
+  </form>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
