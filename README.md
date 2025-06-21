@@ -1,3 +1,7 @@
+Netlify-URL: https://inlighn-tech-dummy.netlify.app/
+Github-URL: https://kuldeepchaudhary01.github.io/Inlighn-Tech-/
+
+
 # Inlighn-Tech-
 
 Key Features:
